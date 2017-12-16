@@ -1,0 +1,8 @@
+*.mat
+env/
+.idea
+__pychache__
+*.pyc
+*.jpg
+*.txt
+*.zip
