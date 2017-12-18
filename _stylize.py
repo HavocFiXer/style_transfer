@@ -38,14 +38,14 @@ def stylize(network, initial, initial_noiseblend, content, styles, preserve_colo
 
     vgg_weights, vgg_mean_pixel = vgg.load_net(network)
 
-    layer_weight = 1.0
+    layer_weight = 1.0 #save style layer weights
     style_layers_weights = {}
     for style_layer in STYLE_LAYERS:
         style_layers_weights[style_layer] = layer_weight
         layer_weight *= style_layer_weight_exp #increase by exp, for each loop
 
     # normalize style layer weights
-    layer_weights_sum = 0
+    layer_weights_sum = 0 #normalize style layer weights
     for style_layer in STYLE_LAYERS:
         layer_weights_sum += style_layers_weights[style_layer]
     for style_layer in STYLE_LAYERS:
