@@ -128,7 +128,7 @@ def main():
         style_images[i] = scipy.misc.imresize(style_images[i], style_scale *
                 target_shape[1] / style_images[i].shape[1])
 
-    style_blend_weights = options.style_blend_weights
+    style_blend_weights = options.style_blend_weights #normalize style weights
     if style_blend_weights is None:
         # default is equal weights
         style_blend_weights = [1.0/len(style_images) for _ in style_images]

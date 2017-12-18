@@ -33,8 +33,8 @@ def stylize(network, initial, initial_noiseblend, content, styles, preserve_colo
     """
     shape = (1,) + content.shape
     style_shapes = [(1,) + style.shape for style in styles]
-    content_features = {}
-    style_features = [{} for _ in styles]
+    content_features = {} #to store content features
+    style_features = [{} for _ in styles] #to store style features
 
     vgg_weights, vgg_mean_pixel = vgg.load_net(network)
 
